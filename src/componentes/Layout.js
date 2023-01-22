@@ -1,10 +1,17 @@
+import { Outlet } from "react-router-dom";
 import styled from "styled-components";
 import "../index.css";
+
+import Navbar from "./Navbar";
+
 const Layout = () => {
   return (
     <>
       <Content>
-        <H1>background animation</H1>
+        <Navbar />
+        <PageContainer>
+          <Outlet />
+        </PageContainer>
       </Content>
       <div className="box">
         <ul>
@@ -21,20 +28,19 @@ const Layout = () => {
 };
 
 export default Layout;
+
 const Content = styled.div`
-  background-color: #000;
+  background-color: #0e181e;
   height: 100vh;
+  width: 100vw;
   overflow: hidden;
 `;
 
-const H1 = styled.h1`
-  color: #fff;
-  position: absolute;
-  font-family: azonix;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 1;
-  font-size: 80px;
-  text-align: center;
+const PageContainer = styled.div`
+  margin-top: 10px;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  width: 80%;
+  height: 90%;
 `;
